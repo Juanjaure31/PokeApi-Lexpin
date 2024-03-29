@@ -22,8 +22,9 @@ const Navbar = () => {
           <span className="slider"></span>
         </label>
         <Luna />
-      </div>
+      </div> 
     </nav>
+   
   )
 }
 
