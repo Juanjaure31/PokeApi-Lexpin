@@ -3,6 +3,7 @@ import usePokemones from '../hooks/usePokemones'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Cargando from './Cargando'
 import DetallePokemon from './DetallePokemon'
+import Card from './Favorite'
 //import Buscador from './Buscador'
 import { useState } from 'react'
 
@@ -14,6 +15,8 @@ function Pokemon({ id, nombre, imagen, verPokemon }) {
         <span>#{id}</span>
         <span>{nombre}</span>
       </p>
+      <Card>
+      </Card>
     </div>
   )
 }
