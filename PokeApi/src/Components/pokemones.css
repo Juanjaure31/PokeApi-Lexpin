@@ -32,7 +32,7 @@
   
   .pokemon-titulo {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: #454A54;
     color: #eee;
@@ -40,5 +40,7 @@
     text-transform: capitalize;
     padding: 4px 8px;
     border-radius: 10px;
-    width: 50%;
+    width: auto;
+    text-align: center;
+    gap: 0.3rem;
   }
