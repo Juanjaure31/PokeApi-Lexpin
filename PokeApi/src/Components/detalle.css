@@ -1,86 +1,159 @@
 .modal-container {
-    background-color: rgba(235, 235, 235, 0.812);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    place-items: center;
-    transition: all 0.2s;
-    z-index: 1;
+  background-color: #dfdfdf;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 500px;
+  height: 90vh;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid #2e2e2e;
+  box-shadow: 4px 4px 0px  #2e2e2e;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 1;
+
+}
+
+.modal-body {
+  background-color: var(--back);
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.imagen-detalle {
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+}
+
+.tag-container > p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  font-size: 1.5rem;
+}
+
+.tag {
+  background-color: #540b0e;
+  color: #f2f2f2;
+  padding: 4px 6px;
+  margin: 5px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.data {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.data .titulo {
+  text-transform: capitalize;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  margin: -5px;
+}
+
+.titulo-seccion {
+  font-weight: 500;
+}
+
+.data section {
+  background-color: var(--card);
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.2);
+  width: 100%;
+}
+
+.stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+}
+
+.stats > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.puntos {
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    max-height: 80vh;
   }
-  
+
   .modal-body {
-    background-color: var(--back);
-    width: 40%;
-    min-width: 400px;
-    border-radius: 10px;
-    position: absolute;
-    padding: 1rem;
-    display: flex;
+    max-width: 350px;
   }
-  
-  .imagen-container {
-    display: grid;
-    place-items: center;
-  }
-  
+
   .imagen-detalle {
-    width: 300px;
-    aspect-ratio: 8/10;
+    max-width: 250px;
   }
-  
-  .tag {
-    background-color: #26e;
-    color: #f2f2f2;
-    padding: 4px 6px;
-    margin-right: 5px;
-    border-radius: 5px;
-    text-transform: capitalize;
-  }
-  
-  .data {
-    display: grid;
-    padding: 0 .5rem;
-    gap: 10px;
-    flex: 1;
-  }
-  
-  .data .titulo {
-    margin: 0;
-    text-transform: capitalize;
-    font-weight: 500;
-  }
-  
-  .titulo-seccion {
-    font-weight: 500;
-  }
-  
-  .data section {
-    background-color: var(--card);
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: 4px 4px 4px #21212120;
-  }
-  
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  
-  .stats > section {
+}
+
+@media screen and (max-width: 576px) {
+  .modal-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    max-height: 80vh;
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    text-transform: capitalize;
   }
-  
-  .puntos {
-    border: 2px solid #000;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: grid;
-    place-items: center;
+
+  .modal-body {
+    max-width: 280px;
   }
+
+  .imagen-detalle {
+    max-width: 150px;
+  }
+  .data .titulo{
+    font-size: 20px;
+  }
+}
