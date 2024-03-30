@@ -10,7 +10,6 @@ function DetallePokemon({mostrar, pokemon, cerrar}) {
           <img src={pokemon.imagen} alt={pokemon.nombre} className="imagen-detalle" />
           <section className='tag-container'>
             {pokemon.types?.map(type => <span className='tag'>{type}</span> )}
-            <p>❤️</p>
           </section>
         </div>
         <div className="data">
@@ -19,6 +18,7 @@ function DetallePokemon({mostrar, pokemon, cerrar}) {
           <h3 className="titulo-seccion">Habilidades</h3>
           {pokemon.abilities?.map(ability => <span className='tag'>{ability}</span>)}
 
+          
           <h3 className="titulo-seccion">Estadisticas</h3>
           <div className='stats'>
             {pokemon.stats?.map(stat =>
@@ -28,7 +28,6 @@ function DetallePokemon({mostrar, pokemon, cerrar}) {
               </section>
             )}
           </div>
-          
         </div>
       </section>
     </div>

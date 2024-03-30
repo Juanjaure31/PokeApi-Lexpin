@@ -5,8 +5,9 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.25s;
+  margin: 10px;
 }
 
 .like-icon.liked {
-  background-color: #26e; 
+  background-color: #9e2a2b; 
 }
