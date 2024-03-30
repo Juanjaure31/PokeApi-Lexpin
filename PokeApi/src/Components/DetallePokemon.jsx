@@ -7,8 +7,9 @@ function DetallePokemon({mostrar, pokemon, cerrar}) {
       <section className="modal-body">
         <div className="imagen-container">
           <img src={pokemon.imagen} alt={pokemon.nombre} className="imagen-detalle" />
-          <section>
-            {pokemon.types?.map(type => <span className='tag'>{type}</span>)}
+          <section className='tag-container'>
+            {pokemon.types?.map(type => <span className='tag'>{type}</span> )}
+            <p>❤️</p>
           </section>
         </div>
         <div className="data">

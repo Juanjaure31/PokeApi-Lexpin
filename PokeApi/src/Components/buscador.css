@@ -1,55 +1,71 @@
-.titulo {
-    font-size: 36px;
-    font-weight: 400;
-    text-align: center;
-    margin: 2rem 0 1rem 0;
-  }
-  
+
+
+.container-buscar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 10px;
+  margin: 20px;
+}
+
+.input-buscar {
+  background-color: #f2f2f2;
+  color: var(--text);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  box-shadow: 4px 4px 16px #00000020;
+}
+
+.btn-buscar {
+  background-color: #E09F3E;
+  color: #f2f2f2;
+  border-radius: 10px;
+  padding: 12px;
+  border: none;
+  box-shadow: 4px 4px 16px #00000020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+  font-size: 16px;
+  transition: 0.2s;
+  width: 100%;
+  max-width: 200px;
+}
+
+.btn-buscar > svg {
+  width: 18px;
+  fill: #f2f2f2;
+}
+
+.btn-buscar:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.btn-buscar:focus {
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
   .container-buscar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 5px 0;
+    flex-direction: row;
   }
-  
+
   .input-buscar {
-    background-color: var(--card);
-    color: var(--text);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 12px;
-    flex: .4;
-    font-size: 16px;
-    box-shadow: 4px 4px 16px #00000020;
+    width: auto;
+    max-width: none;
   }
-  
+
   .btn-buscar {
-    background-color: #26e;
-    color: #f2f2f2;
-    border-radius: 10px;
-    padding: 12px;
-    border: none;
-    box-shadow: 4px 4px 16px #00000020;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    gap: 5px;
-    font-size: 16px;
-    transition: 0.2s;
+    width: auto;
+    max-width: none;
   }
-  
-  .btn-buscar > svg {
-    width: 18px;
-    fill: #f2f2f2;
-  }
-  
-  .btn-buscar:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
-  }
-  
-  .btn-buscar:focus {
-    border: none;
-  }
+}
