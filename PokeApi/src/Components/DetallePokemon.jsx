@@ -4,6 +4,7 @@ function DetallePokemon({mostrar, pokemon, cerrar}) {
   
   return (
     <div className="modal-container" onClick={cerrar} style={{ display: mostrar ? 'grid' : 'none' }}>
+      <p>&times;</p>
       <section className="modal-body">
         <div className="imagen-container">
           <img src={pokemon.imagen} alt={pokemon.nombre} className="imagen-detalle" />

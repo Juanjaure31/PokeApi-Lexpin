@@ -21,6 +21,14 @@
 
 }
 
+.modal-container > p{
+  top: 2px;
+  left: 10px;
+  position: absolute;
+  font-size: 35px;
+  cursor: pointer;
+}
+
 .modal-body {
   background-color: var(--back);
   width: 90%;
