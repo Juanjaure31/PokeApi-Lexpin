@@ -9,6 +9,7 @@ function DetallePokemon({mostrar, pokemon, cerrar}) {
           <img src={pokemon.imagen} alt={pokemon.nombre} className="imagen-detalle" />
           <section>
             {pokemon.types?.map(type => <span className='tag'>{type}</span>)}
+            <p>❤️</p>
           </section>
         </div>
         <div className="data">
