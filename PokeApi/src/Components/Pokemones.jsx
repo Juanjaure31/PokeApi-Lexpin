@@ -5,6 +5,7 @@ import Cargando from './Cargando'
 import DetallePokemon from './DetallePokemon'
 import Buscador from './Buscador'
 import Card from './Favorite'
+//import Buscador from './Buscador'
 import { useState } from 'react'
 
 function Pokemon({ id, nombre, imagen, verPokemon }) {
