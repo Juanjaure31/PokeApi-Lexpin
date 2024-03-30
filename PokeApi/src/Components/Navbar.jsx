@@ -30,11 +30,18 @@ const Navbar = () => {
 
   return (
     <nav>
-      <img src="/7.svg" alt="Pokemon" />
-      {showLink && <a href="#" onClick={handleFavoritosClick}>Favoritos</a>}
-      {showModal && <FavoritosModal onClose={handleCloseModal} />}
+      <Logo />
+      <div className="switch">
+        <Sol />
+        <label>
+          <input type="checkbox" className="check-switch" onChange={handleChange} hidden/>
+          <span className="slider"></span>
+        </label>
+        <Luna />
+      </div> 
     </nav>
-  );
-};
+   
+  )
+}
 
 export default Navbar;
