@@ -3,7 +3,7 @@ import usePokemones from '../hooks/usePokemones'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Cargando from './Cargando'
 import DetallePokemon from './DetallePokemon'
-//import Buscador from './Buscador'
+import Buscador from './Buscador'
 import { useState } from 'react'
 
 function Pokemon({ id, nombre, imagen, verPokemon }) {
@@ -44,7 +44,7 @@ function Pokemones() {
   return (
     <>
       {<DetallePokemon {...mostrar} cerrar={noVerPokemon}/>}
-      {/* <Buscador busqueda={busqueda} setBusqueda={setBusqueda} buscarPokemon={buscarPokemon}/> */}
+      {<Buscador busqueda={busqueda} setBusqueda={setBusqueda} buscarPokemon={buscarPokemon}/>}
       <InfiniteScroll
         dataLength={pokemones.length}
         next={masPokemones}
