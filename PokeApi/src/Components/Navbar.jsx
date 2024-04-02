@@ -20,8 +20,9 @@ const FavoritosModal = ({ onClose }) => {
         {favoritos.length > 0 ? (
           <div className="favoritos-container">
             {favoritos.map(pokemon => (
-              <div key={pokemon.id} className="favorito" onClick={() => handleRemoveFavorite(pokemon.id)}>
+              <div key={pokemon.id} className="favorito" >
                 <p className="favorito-nombre">#{pokemon.id} - {pokemon.nombre}</p>
+                <button onClick={() => handleRemoveFavorite(pokemon.id)}>-</button>
               </div>
             ))}
           </div>
