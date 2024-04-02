@@ -1,11 +1,13 @@
-import './buscador.css'
+import './buscador.css';
 import { Buscar } from './Icons';
 
 function Buscador({ busqueda, setBusqueda, buscarPokemon }) {
   
+
+
   return (
     <>
-      <h3 className='titulo'>Mas de 800 pokemones, elige tu favorito</h3>
+      {/* <h3 > {typeEffect} </h3> */}
       <form className='container-buscar' onSubmit={buscarPokemon}>
         <input type="text" placeholder='Encuentra tu pokemon' className='input-buscar'
           value={busqueda}
