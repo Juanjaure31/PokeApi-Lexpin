@@ -24,13 +24,23 @@ nav > a {
   padding: 20px;
   height: auto;
   border-radius: 20px;
+  position: absolute;
+  left: 65%;
+  top: 0%;
 }
 
 .modal-content > span {
   cursor: pointer;
 }
+.favoritos-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-height: 100px;
+  overflow-y: scroll;
+}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
   nav {
     flex-direction: column;
     height: auto;
@@ -39,6 +49,13 @@ nav > a {
 
   nav > img {
     margin-bottom: 10px;
+  }
+  .modal {
+    background-color: #FFF8CE;
+    padding: 20px;
+    height: auto;
+    border-radius: 20px;
+    position: initial ; 
   }
 }
 

@@ -3,12 +3,31 @@ import './Navbar.css';
 import '../../public/7.svg'
 
 const FavoritosModal = ({ onClose }) => {
+  const [favoritos, setFavoritos] = useState(JSON.parse(localStorage.getItem('favoritePokemons')) || []);
+
+  const handleRemoveFavorite = (id) => {
+    const updatedFavorites = favoritos.filter(pokemon => pokemon.id !== id);
+    setFavoritos(updatedFavorites);
+    localStorage.setItem('favoritePokemons', JSON.stringify(updatedFavorites));
+    
+  };
+
   return (
     <div className="modal">
       <div className="modal-content">
         <span className="close" onClick={onClose}>&times;</span>
         <h2>Mis Pokemons Favoritos</h2>
-        <p>Aquí deberían mostrarse los pokemons favoritos...</p>
+        {favoritos.length > 0 ? (
+          <div className="favoritos-container">
+            {favoritos.map(pokemon => (
+              <div key={pokemon.id} className="favorito" onClick={() => handleRemoveFavorite(pokemon.id)}>
+                <p className="favorito-nombre">#{pokemon.id} - {pokemon.nombre}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>No tienes Pokémon favoritos aún.</p>
+        )}
       </div>
     </div>
   );

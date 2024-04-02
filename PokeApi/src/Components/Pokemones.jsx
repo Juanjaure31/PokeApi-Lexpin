@@ -8,19 +8,23 @@ import Buscador from './Buscador'
 import { useState } from 'react'
 
 function Pokemon({ id, nombre, imagen, verPokemon }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
   const handleAddToFavorites = (e) => {
     e.stopPropagation(); // Evitar que se propague el evento click al contenedor principal
     const favoritos = JSON.parse(localStorage.getItem('favoritePokemons')) || [];
-    const nuevoPokemon = { id, nombre, imagen };
-    const alreadyAdded = favoritos.find(pokemon => pokemon.id === id);
+    const alreadyAddedIndex = favoritos.findIndex(pokemon => pokemon.id === id);
 
-    if (!alreadyAdded) {
+    if (alreadyAddedIndex === -1) {
+      const nuevoPokemon = { id, nombre, imagen };
       favoritos.push(nuevoPokemon);
-      localStorage.setItem('favoritePokemons', JSON.stringify(favoritos));
-      alert(`${nombre} ha sido agregado a tus favoritos`);
+      setIsFavorite(true); // Cambiar el estado a favorito
     } else {
-      alert(`${nombre} ya está en tus favoritos`);
+      favoritos.splice(alreadyAddedIndex, 1);
+      setIsFavorite(false); // Cambiar el estado a no favorito
     }
+
+    localStorage.setItem('favoritePokemons', JSON.stringify(favoritos));
   };
 
   return (
@@ -30,8 +34,8 @@ function Pokemon({ id, nombre, imagen, verPokemon }) {
         <span>#{id}</span>
         <span>{nombre}</span>
       </p>
-      <button className='add-favorite-btn' onClick={handleAddToFavorites}>
-        Agregar a Favoritos
+      <button className={`add-favorite-btn ${isFavorite ? 'favorite' : ''}`} onClick={handleAddToFavorites}>
+        <span role="img" aria-label="heart">{isFavorite ? '❤️' : '🖤'}</span>
       </button>
     </div>
   );
