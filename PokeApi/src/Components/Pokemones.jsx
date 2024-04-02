@@ -4,11 +4,25 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import Cargando from './Cargando'
 import DetallePokemon from './DetallePokemon'
 import Buscador from './Buscador'
-import Card from './Favorite'
 //import Buscador from './Buscador'
 import { useState } from 'react'
 
 function Pokemon({ id, nombre, imagen, verPokemon }) {
+  const handleAddToFavorites = (e) => {
+    e.stopPropagation(); // Evitar que se propague el evento click al contenedor principal
+    const favoritos = JSON.parse(localStorage.getItem('favoritePokemons')) || [];
+    const nuevoPokemon = { id, nombre, imagen };
+    const alreadyAdded = favoritos.find(pokemon => pokemon.id === id);
+
+    if (!alreadyAdded) {
+      favoritos.push(nuevoPokemon);
+      localStorage.setItem('favoritePokemons', JSON.stringify(favoritos));
+      alert(`${nombre} ha sido agregado a tus favoritos`);
+    } else {
+      alert(`${nombre} ya está en tus favoritos`);
+    }
+  };
+
   return (
     <div className='pokemon-card' onClick={verPokemon}>
       <img src={imagen} alt={nombre} className='pokemon-imagen' />
@@ -16,10 +30,11 @@ function Pokemon({ id, nombre, imagen, verPokemon }) {
         <span>#{id}</span>
         <span>{nombre}</span>
       </p>
-      <Card>
-      </Card>
+      <button className='add-favorite-btn' onClick={handleAddToFavorites}>
+        Agregar a Favoritos
+      </button>
     </div>
-  )
+  );
 }
 
 function Pokemones() {
